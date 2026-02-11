@@ -1,0 +1,95 @@
+/* Rayan Allwama - Custom Professional Styles
+This file includes base resets and custom animations for a premium feel.
+*/
+
+@import url('https://www.google.com/search?q=https://fonts.googleapis.com/css2%3Ffamily%3DInter:wght%40300%3B400%3B700%3B900%26display%3Dswap');
+
+:root {
+--accent-gold: #f59e0b;
+--bg-dark: #0f172a;
+}
+
+body {
+margin: 0;
+padding: 0;
+font-family: 'Inter', sans-serif;
+background-color: var(--bg-dark);
+color: white;
+overflow-x: hidden;
+-webkit-font-smoothing: antialiased;
+}
+
+/* Smooth Scrolling */
+html {
+scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+background: var(--accent-gold);
+color: #000;
+}
+
+/* Custom Fade-in Animation for Hero Content */
+@keyframes fadeInUp {
+from {
+opacity: 0;
+transform: translateY(30px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+.animate-fade-in-up {
+animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Profile Image Hover Glow */
+.profile-image-container:hover {
+box-shadow: 0 0 30px rgba(245, 158, 11, 0.3);
+transition: box-shadow 0.5s ease;
+}
+
+/* Glowing Pulse effect for background elements */
+@keyframes pulseGlow {
+0%, 100% {
+opacity: 0.1;
+transform: scale(1);
+}
+50% {
+opacity: 0.2;
+transform: scale(1.1);
+}
+}
+
+.bg-pulse {
+animation: pulseGlow 10s infinite ease-in-out;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+width: 8px;
+}
+
+::-webkit-scrollbar-track {
+background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+background: #334155;
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+background: var(--accent-gold);
+}
+
+/* Glassmorphism utility */
+.glass {
+background: rgba(255, 255, 255, 0.03);
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+border: 1px solid rgba(255, 255, 255, 0.05);
+}
